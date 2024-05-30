@@ -1,3 +1,3 @@
 Competencia de Fútbol
-madrid ,2000,40,false,30,20,10
+madrid ,1000,40,false,30,20,10
 barca,3000,2,false,2,2,2

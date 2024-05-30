@@ -10,7 +10,14 @@ data class Equipo(
     var partidosGanados: Int,
     var partidosEmpatados: Int,
     var partidosPerdidos: Int
-)
+) {
+    private val dateFormat = SimpleDateFormat("yyyy")
+
+    override fun toString(): String {
+        val year = dateFormat.format(primeraParticipacion)
+        return "Nombre: $nombre, Primera Participación: $year, Veces Participado: $vecesParticipado, Participando: $participando, Partidos Ganados: $partidosGanados, Partidos Empatados: $partidosEmpatados, Partidos Perdidos: $partidosPerdidos"
+    }
+}
 
 data class Competencia(
     val nombre: String,
@@ -119,6 +126,7 @@ fun main() {
                 println("Equipos en la competencia:")
                 competencia.equipos.forEach {
                     println(it)
+                    println() // Agrega un salto de línea entre cada equipo
                 }
             }
             3 -> {
