@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "837573804992",
+    "project_id": "medg-2024a-cc-gr1",
+    "storage_bucket": "medg-2024a-cc-gr1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837573804992:android:f3ddc6b4ff007f3ae3fe25",
+        "android_client_info": {
+          "package_name": "com.example.a2024accgr1megs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKkAwPP1zwd5xWRQy1JcjneFLD7Kg4saE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
