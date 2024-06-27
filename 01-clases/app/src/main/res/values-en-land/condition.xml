@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="condition">Hello, that is the firts condition</string>
+    <color name="condition_text">#FFFFFF</color>
+    <color name="condition_background">#FF0000</color>
+</resources>
