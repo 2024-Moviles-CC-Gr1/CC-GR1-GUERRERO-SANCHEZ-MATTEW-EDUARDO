@@ -1,0 +1,10 @@
+sevilla,1958,21,true,117,45,502
+inter_de_milán,1960,33,false,140,52,483
+roma,1961,23,true,107,42,484
+tottenham,1972,31,true,137,45,515
+feyenoord,1970,27,true,115,42,406
+borussia_mon,1970,25,true,115,42,407
+atletico_de_madrid,1960,54,false,232,84,768
+olympique_lyon,1995,24,true,116,46,449
+lazio,1971,30,true,127,46,5110
+betis,1971,17,true,35,16,22
