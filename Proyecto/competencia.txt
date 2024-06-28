@@ -9,3 +9,4 @@ liverpool,1964,27,true,138,44,67
 chelsea,1999,19,true,98,45,45
 psg,1986,15,true,89,26,33
 ajax,2000,40,false,3,4,32
+porto,1986,28,true,43,25,44

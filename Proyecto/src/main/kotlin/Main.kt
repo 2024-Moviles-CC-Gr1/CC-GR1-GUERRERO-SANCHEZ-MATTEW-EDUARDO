@@ -15,7 +15,9 @@ data class Equipo(
 
     override fun toString(): String {
         val year = dateFormat.format(primeraParticipacion)
-        return "Nombre: $nombre, Primera Participación: $year, Veces Participado: $vecesParticipado, Participando: $participando, Partidos Ganados: $partidosGanados, Partidos Empatados: $partidosEmpatados, Partidos Perdidos: $partidosPerdidos"
+        return "Nombre: $nombre, Primera Participación: $year, Veces Participado: $vecesParticipado," +
+                " Participando: $participando, Partidos Ganados: $partidosGanados, Partidos Empatados:" +
+                " $partidosEmpatados, Partidos Perdidos: $partidosPerdidos"
     }
 }
 
@@ -34,14 +36,15 @@ class FutbolManager {
         guardarCompetencia(competencia)
     }
 
-    // Leer equipos desde el archivo
-    private fun leerEquipos(lines: List<String>): MutableList<Equipo> {
+    // Ver equipos desde el archivo
+    private fun verEquipos(lines: List<String>): MutableList<Equipo> {
         val equipos = mutableListOf<Equipo>()
         for (line in lines) {
             val data = line.split(",")
             val date = dateFormat.parse(data[1])
             val participando = data[3].toBoolean()
-            equipos.add(Equipo(data[0], date, data[2].toInt(), participando, data[4].toInt(), data[5].toInt(), data[6].toInt()))
+            equipos.add(Equipo(data[0], date, data[2].toInt(), participando, data[4].toInt(),
+                data[5].toInt(), data[6].toInt()))
         }
         return equipos
     }
@@ -73,12 +76,12 @@ class FutbolManager {
     }
 
     // Leer la competencia y equipos desde el archivo
-    fun leerCompetencia(): Competencia {
+    fun verCompetencia(): Competencia {
         val file = File(archivoCompetencia)
         return if (file.exists()) {
             val lines = file.readLines()
             val nombre = lines.first().trim()
-            val equipos = leerEquipos(lines.drop(1))
+            val equipos = verEquipos(lines.drop(1))
             Competencia(nombre, equipos)
         } else {
             Competencia("Competencia de Fútbol", mutableListOf())
@@ -88,13 +91,13 @@ class FutbolManager {
 
 fun main() {
     val futbolManager = FutbolManager()
-    var competencia = futbolManager.leerCompetencia()
+    val competencia = futbolManager.verCompetencia()
     val dateFormat = SimpleDateFormat("yyyy")
 
     while (true) {
         println("\nGestión de Competencia de Fútbol")
         println("1. Crear equipo")
-        println("2. Leer equipos")
+        println("2. Ver equipos")
         println("3. Actualizar equipo")
         println("4. Eliminar equipo")
         println("5. Guardar competencia")
