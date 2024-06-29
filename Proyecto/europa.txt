@@ -8,3 +8,4 @@ atletico_de_madrid,1960,54,false,232,84,768
 olympique_lyon,1995,24,true,116,46,449
 lazio,1971,30,true,127,46,5110
 betis,1971,17,true,35,16,22
+city,2002,30,false,30,20,2
