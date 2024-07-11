@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">2024ACCGR1MEGS</string>
     <string name="Saludos">Hola amigos</string>
+    <string-array name="string_array_opciones">
+        <item>Lunes</item>
+        <item>Martes</item>
+        <item>Miercoles</item>
+    </string-array>
 </resources>
