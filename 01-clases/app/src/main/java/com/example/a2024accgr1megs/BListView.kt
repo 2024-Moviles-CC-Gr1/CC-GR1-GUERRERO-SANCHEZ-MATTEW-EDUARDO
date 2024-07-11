@@ -43,7 +43,7 @@ class BListView : AppCompatActivity() {
 
     var posicionItemSeleccionado = -1
 
-    override fun OnCreateContextMenuListener(
+    fun OnCreateContextMenuListener(
         menu: ContextMenu?,
         v: View?,
         menuInfo: ContextMenu.ContextMenuInfo?
@@ -58,7 +58,7 @@ class BListView : AppCompatActivity() {
         posicionItemSeleccionado = posicion
     }
 
-    override fun OnContextItemSelected(item: MenuItem): Boolean{
+    fun OnContextItemSelected(item: MenuItem): Boolean{
         return when (item.itemId){
             R.id.mi_editar -> {
                 mostrarSnackbar("Editar $posicionItemSeleccionado")

@@ -13,7 +13,7 @@ class ACicloVida : AppCompatActivity() {
     fun mostrarSnackbar(texto:String){
         textoGlobal += texto
         val snack = Snackbar.make(
-            findViewById(R.id.cl_ciclo_vida),
+            findViewById(R.id.id_layout_main),
             textoGlobal,
             Snackbar.LENGTH_INDEFINITE
         )
@@ -26,7 +26,7 @@ class ACicloVida : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_aciclo_vida)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.cl_ciclo_vida)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.id_layout_main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
