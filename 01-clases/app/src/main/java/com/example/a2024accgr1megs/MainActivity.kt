@@ -1,5 +1,6 @@
 package com.example.a2024accgr1megs
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -73,6 +74,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -116,6 +118,16 @@ class MainActivity : AppCompatActivity() {
                 callbackContenidoIntentExplicito.launch(intentExplicito)
 
             }
+
+        //Iniciar la base de Datos
+        EBaseDeDatos.tablaEntrenador = ESqliteHelperEntrenador(
+            this
+        )
+
+        val botonSqlite = findViewById<Button>(R.id.btn_sqlite)
+        botonSqlite.setOnClickListener{
+            irActividad(ECrudEntrenador::class.java)
+        }
     }
 
     fun irActividad(

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="condition">Hello, that is the second condition</string>
+    <string name="condition">Hello</string>
     <color name="condition_text">#000000</color>
     <color name="condition_background">#00FF00</color>
 </resources>
