@@ -19,5 +19,14 @@ class BBaseDatosMemoria {
 
 
         }
+
+        //Crea metodos como
+        //Fun guardarEntrenador(){}
+        //Fun busca, editar, eliminar, etc etc
+        //Modelo vista compilador
+        //no crear un arreglo en el listview
+        //crear metodos usar en las actividades
+        //se va a modificar para el sqlite
     }
+
 }
