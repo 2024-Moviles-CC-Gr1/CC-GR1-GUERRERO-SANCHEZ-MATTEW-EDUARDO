@@ -15,10 +15,19 @@ class TrendsActivity : AppCompatActivity() {
         binding = ActivityTrendsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Datos de ejemplo
+        // Datos de ejemplo para Trends
         val trendList = listOf(
-            Trend("Trend 1"),
-            Trend("Trend 2")
+            Trend("Trend 1\n#Elecciones2024"),
+            Trend("Trend 2\n#JuegosOlimpicos"),
+            Trend("Trend 3\n#COVID19"),
+            Trend("Trend 4\n#CambioClimatico"),
+            Trend("Trend 5\n#Tecnologia2024"),
+            Trend("Trend 6\n#EnergiasRenovables"),
+            Trend("Trend 7\n#Deportes2024"),
+            Trend("Trend 8\n#SaludPublica"),
+            Trend("Trend 9\n#EducacionFutura"),
+            Trend("Trend 10\n#Innovacion")
+
         )
 
         // Configura el RecyclerView para las Tendencias

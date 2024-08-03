@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:padding="8dp">
 
+
     <TextView
         android:id="@+id/trendTitle"
         android:layout_width="0dp"
