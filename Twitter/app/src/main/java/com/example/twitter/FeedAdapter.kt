@@ -3,24 +3,31 @@ package com.example.twitter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.twitter.databinding.ItemFeedBinding
+import com.example.twitter.databinding.ItemNewsBinding
 
-data class Tweet(val user: String, val content: String)
+class NewsAdapter(private val newsList: List<News>) :
+    RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
-class FeedAdapter(private val tweetList: List<Tweet>) : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
-
-    class FeedViewHolder(val binding: ItemFeedBinding) : RecyclerView.ViewHolder(binding.root)
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
-        val binding = ItemFeedBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return FeedViewHolder(binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
+        val binding = ItemNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return NewsViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
-        val tweet = tweetList[position]
-        holder.binding.tweetUser.text = tweet.user
-        holder.binding.tweetContent.text = tweet.content
+    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
+        val news = newsList[position]
+        holder.bind(news)
     }
 
-    override fun getItemCount() = tweetList.size
+    override fun getItemCount(): Int = newsList.size
+
+    class NewsViewHolder(private val binding: ItemNewsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(news: News) {
+            binding.newsTitle.text = news.title
+            binding.newsContent.text = news.content
+        }
+    }
 }
+
+data class News(val title: String, val content: String)
