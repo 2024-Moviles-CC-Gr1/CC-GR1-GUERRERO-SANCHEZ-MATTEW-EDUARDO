@@ -1,5 +1,6 @@
 package com.example.twitter
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,17 +21,14 @@ class MainActivity : AppCompatActivity() {
             News("News Title 2", "This is the content of the news item 2.")
         )
 
-        val trendList = listOf(
-            Trend("Trend 1"),
-            Trend("Trend 2")
-        )
-
         // Configura el RecyclerView para las Noticias
         binding.recyclerViewNews.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewNews.adapter = NewsAdapter(newsList)
 
-        // Configura el RecyclerView para los Trends
-        binding.recyclerViewTrends.layoutManager = LinearLayoutManager(this)
-        binding.recyclerViewTrends.adapter = TrendsAdapter(trendList)
+        // Configura el botón "Search" para ir a la actividad de tendencias
+        binding.btnBuscar.setOnClickListener {
+            val intent = Intent(this, TrendsActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

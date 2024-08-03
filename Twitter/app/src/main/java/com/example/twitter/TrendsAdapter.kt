@@ -5,8 +5,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.twitter.databinding.ItemTrendBinding
 
-class TrendsAdapter(private val trendsList: List<Trend>) :
-    RecyclerView.Adapter<TrendsAdapter.TrendViewHolder>() {
+data class Trend(val title: String)
+
+class TrendsAdapter(private val trendList: List<Trend>) : RecyclerView.Adapter<TrendsAdapter.TrendViewHolder>() {
+
+    inner class TrendViewHolder(private val binding: ItemTrendBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(trend: Trend) {
+            binding.trendTitle.text = trend.title
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrendViewHolder {
         val binding = ItemTrendBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -14,19 +21,8 @@ class TrendsAdapter(private val trendsList: List<Trend>) :
     }
 
     override fun onBindViewHolder(holder: TrendViewHolder, position: Int) {
-        val trend = trendsList[position]
-        holder.bind(trend)
+        holder.bind(trendList[position])
     }
 
-    override fun getItemCount(): Int = trendsList.size
-
-    class TrendViewHolder(private val binding: ItemTrendBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-
-        fun bind(trend: Trend) {
-            binding.trendTitle.text = trend.title
-        }
-    }
+    override fun getItemCount(): Int = trendList.size
 }
-
-data class Trend(val title: String)
