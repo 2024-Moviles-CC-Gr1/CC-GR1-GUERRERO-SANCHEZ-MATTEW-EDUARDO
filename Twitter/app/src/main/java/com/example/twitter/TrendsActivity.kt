@@ -25,7 +25,7 @@ class TrendsActivity : AppCompatActivity() {
         binding.recyclerViewTrends.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewTrends.adapter = TrendsAdapter(trendList)
 
-        // Configura el botón "Regresar" para volver a la actividad principal
+        // Configura el botón "Back" para volver a la actividad principal
         binding.btnBack.setOnClickListener {
             finish()
         }
