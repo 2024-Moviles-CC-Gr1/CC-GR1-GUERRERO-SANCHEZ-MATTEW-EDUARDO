@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="input_nombre" type="id" />
+    <item name="input_presupuesto_equipo" type="id" />
+    <item name="input_anio" type="id" />
+    <item name="input_premio_torneo" type="id" />
+    <item name="input_patrocinador" type="id" />
+    <item name="input_id" type="id" />
+    <item name="btn_google_maps" type="id" />
+    <item name="btn_ir_torneo" type="id" />
+</resources>

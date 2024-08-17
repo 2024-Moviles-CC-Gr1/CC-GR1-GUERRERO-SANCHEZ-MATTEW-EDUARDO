@@ -1,64 +1,53 @@
-package com.example.torneoequipo
+package com.example.torneoequipo;
 
-import android.app.AlertDialog
-import android.content.DialogInterface
+import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
+    fun mostrarSnackbar(texto:String){
+        val snack = Snackbar.make(
+            findViewById(R.id.id_layout_main),
+            texto,
+            Snackbar.LENGTH_INDEFINITE
+        )
+        snack.show()
+    }
 
-    private lateinit var baseDatos: BaseDatos
-    private lateinit var adapter: ArrayAdapter<String>
-    private lateinit var torneos: MutableList<String>
-
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        baseDatos = BaseDatos(this)
-        torneos = baseDatos.getTournaments().toMutableList()
+        //Inicializar Base de Datos
+        EBaseDeDatosTorneos.tablaTorneos = ESqliteHelperTorneos(
+            this
+        )
+        EBaseDeDatosEquipos.tablaEquipos = ESqliteHelperEquipos(
+            this
+        )
 
-        val listaTorneos = findViewById<ListView>(R.id.listaTorneos)
-        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, torneos)
-        listaTorneos.adapter = adapter
-
-        val btnCrearTorneo = findViewById<Button>(R.id.btnCrearTorneo)
-        btnCrearTorneo.setOnClickListener {
-            mostrarDialogoCrearTorneo()
+        val botonAutos = findViewById<Button>(R.id.btn_torneos)
+        botonAutos.setOnClickListener {
+            irActividad((ECrudTorneos::class.java))
         }
 
-        listaTorneos.setOnItemClickListener { _, _, position, _ ->
-            val torneoSeleccionado = torneos[position]
-            val intent = Intent(this, TeamsActivity::class.java)
-            intent.putExtra("TORNEO", torneoSeleccionado)
-            startActivity(intent)
+        val botonPartes = findViewById<Button>(R.id.btn_equipos)
+        botonPartes.setOnClickListener {
+            irActividad((ECrudEquipos::class.java))
         }
+
+
     }
 
-    private fun mostrarDialogoCrearTorneo() {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Crear Torneo")
-
-        val input = EditText(this)
-        builder.setView(input)
-
-        builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
-            val nombreTorneo = input.text.toString()
-            if (nombreTorneo.isNotEmpty()) {
-                baseDatos.addTournament(nombreTorneo)
-                torneos.add(nombreTorneo)
-                adapter.notifyDataSetChanged()
-            }
-        })
-        builder.setNegativeButton("Cancelar", DialogInterface.OnClickListener { dialog, which ->
-            dialog.cancel()
-        })
-
-        builder.show()
+    // Mensaje de prueba
+    fun irActividad(
+        clase: Class<*>
+    ){
+        val intent = Intent(this, clase)
+        startActivity(intent)
     }
 }

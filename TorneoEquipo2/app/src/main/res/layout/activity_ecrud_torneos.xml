@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_torneos"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ECrudTorneos">
+
+    <TextView
+        android:id="@+id/txt_menu_autos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido al Menú de Torneos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.119" />
+
+    <EditText
+        android:id="@+id/input_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Ingrese id"
+        app:layout_constraintBottom_toTopOf="@+id/input_nombre"
+        app:layout_constraintEnd_toEndOf="@+id/input_nombre"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_nombre" />
+
+    <EditText
+        android:id="@+id/input_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Ingrese nombre"
+        app:layout_constraintBottom_toTopOf="@+id/input_anio"
+        app:layout_constraintEnd_toEndOf="@+id/input_anio"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_anio" />
+
+    <Button
+        android:id="@+id/btn_eliminar_bdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="132dp"
+        android:text="Eliminar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/input_anio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Ingrese anio"
+        app:layout_constraintBottom_toTopOf="@+id/input_premio_torneo"
+        app:layout_constraintEnd_toEndOf="@+id/input_premio_torneo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_premio_torneo" />
+
+    <EditText
+        android:id="@+id/input_patrocinador"
+        android:layout_width="226dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Tiene Patrocinador, si o no"
+        app:layout_constraintBottom_toTopOf="@+id/btn_crear_bdd"
+        app:layout_constraintEnd_toEndOf="@+id/btn_crear_bdd"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="@+id/btn_crear_bdd" />
+
+    <Button
+        android:id="@+id/btn_actualizar_bdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="224dp"
+        android:text="Actualizar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_crear_bdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="224dp"
+        android:text="Crear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_buscar_bdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="224dp"
+        android:text="Buscar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/input_premio_torneo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Premio del Torneo"
+        app:layout_constraintBottom_toTopOf="@+id/input_patrocinador"
+        app:layout_constraintEnd_toEndOf="@+id/input_patrocinador"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_patrocinador" />
+
+    <Button
+        android:id="@+id/btn_google_maps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Google Maps"
+        app:layout_constraintEnd_toEndOf="@+id/btn_eliminar_bdd"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="@+id/btn_eliminar_bdd"
+        app:layout_constraintTop_toBottomOf="@+id/btn_eliminar_bdd" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
