@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Cabecera -->
+
+    <LinearLayout
+        android:id="@+id/headerLinearLayout"
+        android:layout_width="414dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="456dp"
+        android:background="#E2EDF1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/headerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Suscripcion Hasta 30-08-24"
+            android:textSize="48sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/footerBlack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:background="#000000"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/secondaryLinearLayout"
+        android:layout_width="412dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="284dp"
+        android:background="#E2EDF1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/secondaryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="82dp"
+            android:layout_weight="1"
+            android:text="Fernando Cardenas fercho-cardenasdh@hotmail.com"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/imageLinearLayout"
+        android:layout_width="412dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="172dp"
+        android:background="#E2EDF1"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/userImageView"
+            android:layout_width="292dp"
+            android:layout_height="98dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/user" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/loginTextView"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:text="Inicio de Sesion"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="108dp" />
+
+    <LinearLayout
+        android:id="@+id/notificationLinearLayout"
+        android:layout_width="414dp"
+        android:layout_height="74dp"
+        android:background="#EC6940"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/notificationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Boletin El Contador"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp" />
+    </LinearLayout>
+
+    <!-- RecyclerView para News -->
+
+    <!-- Footer -->
+
+    <LinearLayout
+        android:id="@+id/footerBlue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_back" />
+
+                <ImageButton
+            android:id="@+id/btn_buscar"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Search"
+            android:src="@drawable/ic_search" />
+
+        <ImageButton
+            android:id="@+id/btn_noti"
+            android:layout_width="113dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Decorative"
+            android:src="@drawable/ic_decorative" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
